@@ -36,7 +36,7 @@ cron.schedule('0 19 * * 0-4', () => {
                 })
             }
         })
-        for (let i = 1; i < 2; i++) {
+        for (let i = 0; i < 1; i++) {
             let day = output[i]
             await bot.sendMessage(chatId, '='.repeat(20) + '\n*' + day[0].date + '*\n' + '='.repeat(20), { parse_mode: 'Markdown' })
 
