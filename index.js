@@ -12,7 +12,7 @@ const bot = new TelegramBot(token, { polling: false });
 
 const chatId = '@MensaTUKL'
 
-cron.schedule('0 12 * * 7', () => {
+cron.schedule('0 19 * * 0-4', () => {
     console.log('Fired cron!')
     axios.get('https://www.mensa-kl.de').then(async response => {
         //console.log(response)
@@ -36,7 +36,7 @@ cron.schedule('0 12 * * 7', () => {
                 })
             }
         })
-        for (let i = 0; i < 5; i++) {
+        for (let i = 1; i < 2; i++) {
             let day = output[i]
             await bot.sendMessage(chatId, '='.repeat(20) + '\n*' + day[0].date + '*\n' + '='.repeat(20), { parse_mode: 'Markdown' })
 
